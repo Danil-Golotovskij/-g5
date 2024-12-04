@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Коррекция изображения</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f3e5f5;
+            color: #4a148c; 
+        }
+    
+        h1 {
+            color: #6a1b9a; 
+            margin-top: 20px;
+            font-size: 2em;
+            text-transform: uppercase;
+        }
+    
+        #canvas {
+            display: inline-block;
+            width: 50vw;
+            height: 50vh;
+            margin-top: 20px;
+            border: 2px solid #4a148c; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    
+        .chartWrapper {
+            display: inline-block;
+            width: 30vw; 
+            height: 30vh; 
+            margin-left: 15px;
+            margin-top: 20px;
+        }
+    
+        #controlButtons {
+            margin-top: 30px;
+        }
+    
+        button {
+            margin: 10px 5px;
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            background-color: #7b1fa2; 
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    
+        button:hover {
+            background-color: #4a148c; 
+        }
+    
+        .inputs {
+            margin: 10px 5px;
+            padding: 5px;
+            width: 80px;
+            border: 2px solid #7b1fa2; 
+            border-radius: 5px;
+        }
+    
+        .inputs:focus {
+            border-color: #4a148c; 
+            outline: none;
+        }
+    
+        .buttons {
+            display: inline-block;
+        }
+    </style>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+
+    <div class="chartWrapper">
+        <canvas id="chart"></canvas>
+    </div>
+
+    <div id="controlButtons">
+        
+        <button id="grayscaleButton" class="buttons">Чёрно-белое</button>
+        <button id="invertButton" class="buttons">Инвертировать</button>
+
+        <input type="text" id="brightnessInput" class="inputs">
+        <button id="brightnessButton">Изменить яркость</button>
+
+        <input type="text" id="contrastInput" class="inputs">
+        <button id="contrastButton">Изменить контраст</button>
+
+        <input type="text" id="binarizationInput" class="inputs">
+        <button id="binarizationButton">Бинаризация</button>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
